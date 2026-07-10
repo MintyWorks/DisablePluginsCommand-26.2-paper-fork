@@ -3,22 +3,21 @@ package com.nikolaipatrick.disablepluginscommand;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 
-import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class cmdTabCompleter implements org.bukkit.command.TabCompleter {
-    List<String> verbs = new ArrayList<>();
+
+    private static final List<String> VERBS = Collections.unmodifiableList(Arrays.asList("help", "version", "reload"));
+
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
-        if (verbs.isEmpty()) {
-            //Tab completion is really simple here, because we only have 3 commands with no more than 1 argument.
-            verbs.add("help");
-            verbs.add("version");
-            verbs.add("reload");
-        }
+        // Only offer suggestions for the first argument; previously this returned the
+        // full verb list regardless of how many arguments uh were already typed.
         if (args.length == 1) {
-            return verbs;
+            return VERBS;
         }
-        return verbs;
+        return Collections.emptyList();
     }
 }
