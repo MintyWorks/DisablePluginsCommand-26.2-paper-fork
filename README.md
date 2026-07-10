@@ -3,6 +3,8 @@ DisablePluginsCommand is a simple plugin for Minecraft servers based on Bukkit/S
 
 It is also highly customizable. You can choose what commands you want to remain enabled, let admins and devs bypass the plugin by giving them a permission node, and even change the deny message.
 
+### NOW FORKED TO BE ABLE TO SUPPORT PAPER 26.2, spigot too.. probably. And a few bug fixes.
+
 ## Installation: For server admins
 
 Just download the latest version of the plugin from the Spigot page and drop the .jar file into your plugins folder. It's that simple!
