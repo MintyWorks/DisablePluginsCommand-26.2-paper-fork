@@ -13,11 +13,15 @@ clone the repo:
 
 `git clone https://github.com/Smartich0ke/DisablePluginsCommand.git`
 
-Build the .jar file with Maven:
+Build the .jar file with the included Gradle wrapper (no need to install Gradle yourself):
 
-`mvn build`
+* Linux/macOS: `./gradlew build`
+* Windows: `gradlew.bat build`
 
-the newly build .jar file will be in the `target/` folder.
+The newly built .jar file will be in the `build/libs/` folder.
+
+Building requires a JDK (21+) with internet access, since Gradle needs to download the
+Paper API from `https://repo.papermc.io/repository/maven-public/` the first time you build.
 
 ## Usage
 
@@ -37,7 +41,7 @@ DisablePluginsCommand should work out of the box, with no additional configurati
  ### Configuration
  config.yml:
  ```yml
-# disablePluginsCommand ${project.version}
+# disablePluginsCommand ${version}
 # A plugin by Nikolai Patrick (Artichoke) - 2022
 
 #Disable the /plugins and /pl command for un-opped users or users with insufficient permissions:
