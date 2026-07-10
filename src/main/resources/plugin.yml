@@ -1,10 +1,10 @@
 name: DisablePluginsCommand
-version: '${project.version}'
+version: '${version}'
 main: com.nikolaipatrick.disablepluginscommand.DisablePluginsCommand
-api-version: 1.19
+api-version: '26.1'
 prefix: disablePluginsCmd
 authors: [ Nikolaipatrick ]
-description: A plugin to disable the /plugins command
+description: A plugin to disable the /plugins, /version and /about commands (blocks tab completion too)
 website: nikolaipatrick.com
 commands:
   disablepluginscmd:
@@ -13,8 +13,7 @@ commands:
 permissions:
   disablePluginsCmd.bypass:
     default: false
-    description: Allows you to use the /plugins command
+    description: Allows you to use the /plugins, /version and /about commands
   disablePluginsCmd.admin:
     default: false
     description: Allows you to reload disablePluginsCommand
-
